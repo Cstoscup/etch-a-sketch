@@ -1,0 +1,30 @@
+h1 {
+  text-align: center;
+}
+
+button {
+  display: block;
+  margin: 0 auto 25px;
+}
+
+#container {
+  border: 1px solid black;
+  width: 600px;
+  margin: 0 auto;
+}
+
+.sketch {
+  background-color: black;
+}
+
+.square {
+  border: 1px solid black;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
