@@ -2,9 +2,12 @@ h1 {
   text-align: center;
 }
 
-button {
-  display: block;
-  margin: 0 auto 25px;
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
 }
 
 #container {
