@@ -24,9 +24,10 @@ function drawGrid(width) {
 }
 
 function setGridSize() {
-  gridSize = prompt("Enter a grid width less than 100.");
-  if (gridSize > 99) {
-    gridSize = prompt("Enter a width less than 100.");
+  let paintbrushSize = prompt("Enter a paintbrush size (1-100)");
+  gridSize = 100 - paintbrushSize;
+  if (gridSize < 0) {
+    gridSize = prompt("Enter a paintbrush size (1-100)");
   }
   container.innerHTML = '';
   drawGrid(gridSize);
