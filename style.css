@@ -1,27 +1,48 @@
+body {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: 'Courier Prime', monospace;
+}
+
 h1 {
   text-align: center;
+}
+
+button {
+  font-family: 'Courier Prime', monospace;
+  font-size: 14px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 2px 2px 7px rgb(132, 132, 132);
+  transition: all 200ms ease-in-out;
+}
+
+button:hover {
+  background-color: black;
+  opacity: .7;
+  color: white;
 }
 
 .buttons {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 10px;
   margin-bottom: 25px;
+  gap: 20px;
 }
 
 #container {
   border: 1px solid black;
+  border-radius: 4px;
   width: 600px;
   margin: 0 auto;
-}
-
-.sketch {
-  background-color: black;
+  box-shadow: 2px 2px 7px rgb(132, 132, 132);
 }
 
 .square {
-  border: 1px solid black;
   width: 100%;
   aspect-ratio: 1;
 }
@@ -30,4 +51,46 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+footer {
+  padding: 40px 0 10px;
+  color: #E5E7EB;
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-links {
+  display: block;
+  color: black;
+  background-color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  transition: all 200ms ease-in-out;
+}
+
+.contact-links:hover {
+  color: white;
+  background-color: black;
+  opacity: .7;
+}
+
+.icon {
+  position: relative;
+  top: 18px;
+}
+
+.email {
+  text-align: center;
+}
+
+@media (max-width: 650px) {
+  #container {
+    max-width: 90%;
+  }
 }

@@ -1,8 +1,7 @@
 const container = document.querySelector("#container");
 let gridSize = 16;
 let mouseDown = false;
-document.body.onmousedown = () => (mouseDown = true);
-document.body.onmouseup = () => (mouseDown = false);
+let rainbow = false;
 
 function drawGrid(width) {
   let rows = 0;
@@ -16,8 +15,8 @@ function drawGrid(width) {
     while (squares < width) {
       const square = document.createElement("div");
       square.classList.add("square");
-      square.addEventListener('mouseover', test);
-      square.addEventListener('mousedown', test);
+      square.addEventListener('mouseover', draw);
+      square.addEventListener('mousedown', draw);
       row.appendChild(square);
       squares++;
     }
@@ -38,11 +37,22 @@ function clearDrawing() {
   drawGrid(gridSize);
 }
 
-function test(event) {
-  if (event.type === 'mouseover' && !mouseDown) {
-    return;
+function setRainbow() {
+  if (rainbow === false) {
+    rainbow = true;
+    rainbowBtn.innerHTML = "Black Mode";
+  } else {
+    rainbow = false;
+    rainbowBtn.innerHTML = "Rainbow Mode";
   }
-  event.target.classList.add("sketch");
+}
+
+function draw(event) {
+    if (rainbow === false) {
+      event.target.style.backgroundColor = "black";
+    } else {
+      event.target.style.backgroundColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+    }
 }
 
 const gridSizeBtn = document.querySelector("#size-button");
@@ -50,5 +60,8 @@ gridSizeBtn.addEventListener("click", setGridSize);
 
 const clearBtn = document.querySelector("#clear-button");
 clearBtn.addEventListener("click", clearDrawing);
+
+const rainbowBtn = document.querySelector("#rainbow-button");
+rainbowBtn.addEventListener("click", setRainbow);
 
 drawGrid(gridSize);
