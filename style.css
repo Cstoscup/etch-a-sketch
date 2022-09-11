@@ -40,6 +40,7 @@ button:hover {
   width: 600px;
   margin: 0 auto;
   box-shadow: 2px 2px 7px rgb(132, 132, 132);
+  background-color: white;
 }
 
 .square {
